@@ -1,8 +1,8 @@
-import 'package:crud_app/home/widgets/home_view_body.dart';
+import 'package:crud_app/add%20data/widgets/add_data_view_body.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class AddDataView extends StatelessWidget {
+  const AddDataView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter CRUD'),
       ),
-      body: const HomeViewBody(),
+      body: const AddDataViewBody(),
     );
   }
 }

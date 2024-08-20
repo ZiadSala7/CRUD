@@ -1,8 +1,8 @@
-import 'package:crud_app/home/widgets/custom_text_field.dart';
+import 'package:crud_app/add%20data/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+class AddDataViewBody extends StatelessWidget {
+  const AddDataViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
