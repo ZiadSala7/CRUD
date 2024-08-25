@@ -6,26 +6,44 @@ class AddDataViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          CustomTextField(
+          const CustomTextField(
             hintTxt: 'Name : ',
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          CustomTextField(
+          const CustomTextField(
             hintTxt: 'Description : ',
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          CustomTextField(
+          const CustomTextField(
             hintTxt: 'Price : ',
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "Ziad",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                ),
+              ),
+            ],
           ),
         ],
       ),
