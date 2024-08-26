@@ -1,4 +1,4 @@
-import 'package:crud_app/add%20data/widgets/add_data_view_body.dart';
+import 'package:crud_app/add%20data/presentation/views/widgets/add_data_view_body.dart';
 import 'package:flutter/material.dart';
 
 class AddDataView extends StatelessWidget {

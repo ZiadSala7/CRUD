@@ -1,4 +1,4 @@
-import 'package:crud_app/add%20data/add_data_view.dart';
+import 'package:crud_app/add%20data/presentation/views/add_data_view.dart';
 import 'package:crud_app/home/home_view.dart';
 import 'package:crud_app/main.dart';
 import 'package:flutter/material.dart';

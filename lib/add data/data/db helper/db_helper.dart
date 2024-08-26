@@ -26,14 +26,28 @@ class DbHelper {
   Future<int> createMethod(CrudModel model) async {
     var dbReady = await db;
     int response = await dbReady!.rawInsert(
-        "INSERT INTO Home(name, description, price) VALUES (${model.name}, ${model.description}, ${model.price})");
+        "INSERT INTO Home(name, description, price) VALUES ('${model.name}', '${model.description}', '${model.price}')");
     return response;
   }
 
   Future<int> updateMethod(CrudModel model) async {
     var dbReady = await db;
     int response = await dbReady!.rawInsert(
-        "UPDATE Home WHERE name = ${model.name}, description = ${model.description}, price = ${model.description}");
+        "UPDATE Home WHERE name = '${model.name}' SET description = '${model.description}', price = '${model.description}'");
+    return response;
+  }
+
+  Future<int> deleteMethod(String name) async {
+    var dbReady = await db;
+    int response =
+        await dbReady!.rawInsert("DELETE FROM Home WHERE name = '$name'");
+    return response;
+  }
+
+  Future<CrudModel> readDataMethod(String name) async {
+    var dbReady = await db;
+    CrudModel response = (await dbReady!
+        .rawQuery("SELECT * FROM Home WHERE name = '$name'")) as CrudModel;
     return response;
   }
 }

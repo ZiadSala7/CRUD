@@ -1,5 +1,6 @@
-import 'package:crud_app/add%20data/widgets/buttons_section.dart';
-import 'package:crud_app/add%20data/widgets/custom_text_field.dart';
+import 'package:crud_app/add%20data/data/models/controllers.dart';
+import 'package:crud_app/add%20data/presentation/views/widgets/buttons_section.dart';
+import 'package:crud_app/add%20data/presentation/views/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class AddDataViewBody extends StatelessWidget {
@@ -7,31 +8,34 @@ class AddDataViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           CustomTextField(
             hintTxt: 'Name : ',
+            controller: nameController,
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           CustomTextField(
             hintTxt: 'Description : ',
+            controller: descController,
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           CustomTextField(
             hintTxt: 'Price : ',
+            controller: pricController,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          ButtonsSection(),
+          const ButtonsSection(),
         ],
       ),
     );

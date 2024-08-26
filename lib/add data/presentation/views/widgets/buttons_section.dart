@@ -1,4 +1,4 @@
-import 'package:crud_app/add%20data/widgets/custom_button.dart';
+import 'package:crud_app/add%20data/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class ButtonsSection extends StatelessWidget {
