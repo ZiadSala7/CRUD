@@ -14,8 +14,8 @@ class DbHelper {
   }
 
   onCreateMethod(Database db, int version) async {
-    await db.execute(
-        "CREATE TABLE Home(name TEXT, description TEXT, price DOUBLE)");
+    await db
+        .execute("CREATE TABLE Home(name TEXT, description TEXT, price TEXT)");
   }
 
   Future<Database?> get db async {
@@ -44,10 +44,16 @@ class DbHelper {
     return response;
   }
 
-  Future<CrudModel> readDataMethod(String name) async {
+  Future<List<CrudModel>> readDataMethod(String name) async {
     var dbReady = await db;
-    CrudModel response = (await dbReady!
-        .rawQuery("SELECT * FROM Home WHERE name = '$name'")) as CrudModel;
-    return response;
+    List<Map> response = await dbReady!.rawQuery("SELECT * FROM Home");
+    List<CrudModel> models = [];
+    for (int i = 0; i < response.length; i++) {
+      models.add(CrudModel(
+          name: response[i]['name'],
+          description: response[i]['description'],
+          price: response[i]['price']));
+    }
+    return models;
   }
 }

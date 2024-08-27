@@ -58,7 +58,9 @@ class _ButtonsSectionState extends State<ButtonsSection> {
         CustomButton(
           title: 'Delete',
           color: Colors.red,
-          onPressed: () {},
+          onPressed: () {
+            dbHelper.deleteMethod(nameController.text);
+          },
         ),
       ],
     );
