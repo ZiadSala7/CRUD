@@ -36,6 +36,15 @@ class _ButtonsSectionState extends State<ButtonsSection> {
               price: pricController.text,
             );
             dbHelper.createMethod(model);
+            resetControllers();
+          },
+        ),
+        CustomButton(
+          title: 'Read',
+          color: Colors.blue,
+          onPressed: () async {
+            list = await dbHelper.readDataMethod();
+            resetControllers();
           },
         ),
         CustomButton(
@@ -48,13 +57,18 @@ class _ButtonsSectionState extends State<ButtonsSection> {
               price: pricController.text,
             );
             dbHelper.updateMethod(model);
+            resetControllers();
           },
         ),
         CustomButton(
           title: 'Delete',
           color: Colors.red,
-          onPressed: () {
+          onPressed: () async {
             dbHelper.deleteMethod(nameController.text);
+            setState(() async {
+              list = await dbHelper.readDataMethod();
+            });
+            resetControllers();
           },
         ),
       ],

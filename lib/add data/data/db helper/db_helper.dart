@@ -15,7 +15,7 @@ class DbHelper {
 
   onCreateMethod(Database db, int version) async {
     await db
-        .execute("CREATE TABLE Home(name TEXT, description TEXT, price TEXT)");
+        .execute("CREATE TABLE ziad(name TEXT, description TEXT, price TEXT)");
   }
 
   Future<Database?> get db async {
@@ -26,27 +26,27 @@ class DbHelper {
   Future<int> createMethod(CrudModel model) async {
     var dbReady = await db;
     int response = await dbReady!.rawInsert(
-        "INSERT INTO Home(name, description, price) VALUES ('${model.name}', '${model.description}', '${model.price}')");
+        "INSERT INTO ziad(name, description, price) VALUES ('${model.name}', '${model.description}', '${model.price}')");
     return response;
   }
 
   Future<int> updateMethod(CrudModel model) async {
     var dbReady = await db;
     int response = await dbReady!.rawInsert(
-        "UPDATE Home WHERE name = '${model.name}' SET description = '${model.description}', price = '${model.description}'");
+        "UPDATE ziad WHERE name = '${model.name}' SET description = '${model.description}', price = '${model.description}'");
     return response;
   }
 
   Future<int> deleteMethod(String name) async {
     var dbReady = await db;
     int response =
-        await dbReady!.rawInsert("DELETE FROM Home WHERE name = '$name'");
+        await dbReady!.rawInsert("DELETE FROM ziad WHERE name = '$name'");
     return response;
   }
 
-  Future<List<CrudModel>> readDataMethod(String name) async {
+  Future<List<CrudModel>> readDataMethod() async {
     var dbReady = await db;
-    List<Map> response = await dbReady!.rawQuery("SELECT * FROM Home");
+    List<Map> response = await dbReady!.rawQuery("SELECT * FROM ziad");
     List<CrudModel> models = [];
     for (int i = 0; i < response.length; i++) {
       models.add(CrudModel(
