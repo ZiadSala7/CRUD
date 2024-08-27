@@ -46,10 +46,17 @@ class _ButtonsSectionState extends State<ButtonsSection> {
         CustomButton(
           title: 'Update',
           color: Colors.amber,
-          onPressed: () {},
+          onPressed: () {
+            CrudModel model = CrudModel(
+              name: nameController.text,
+              description: descController.text,
+              price: pricController.text,
+            );
+            dbHelper.updateMethod(model);
+          },
         ),
         CustomButton(
-          title: 'Create',
+          title: 'Delete',
           color: Colors.red,
           onPressed: () {},
         ),
