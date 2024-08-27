@@ -39,11 +39,6 @@ class _ButtonsSectionState extends State<ButtonsSection> {
           },
         ),
         CustomButton(
-          title: 'Read',
-          color: Colors.blue,
-          onPressed: () {},
-        ),
-        CustomButton(
           title: 'Update',
           color: Colors.amber,
           onPressed: () {
