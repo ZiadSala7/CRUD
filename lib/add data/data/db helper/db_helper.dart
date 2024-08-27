@@ -27,6 +27,7 @@ class DbHelper {
     var dbReady = await db;
     int response = await dbReady!.rawInsert(
         "INSERT INTO Home(name, description, price) VALUES ('${model.name}', '${model.description}', '${model.price}')");
+    print('Successful');
     return response;
   }
 

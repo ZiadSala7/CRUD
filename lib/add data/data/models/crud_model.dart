@@ -1,6 +1,6 @@
 class CrudModel {
   final String name, description;
-  final double price;
+  final String price;
 
   CrudModel({
     required this.name,
